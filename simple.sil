@@ -1,0 +1,8 @@
+pragma silverscript ^0.1.0;
+
+contract SimpleCovenant(pubkey recipient) {
+    entry spend() {
+        byte[36] recipientScriptPubKey = new ScriptPubKeyP2PK(recipient);
+        require(tx.outputs[0].scriptPubKey == byte[](recipientScriptPubKey));
+    }
+}

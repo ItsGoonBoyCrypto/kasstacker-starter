@@ -1,0 +1,19 @@
+name: Verify compile
+
+# Proves ./compile.sh works against current Silverscript in a fresh container,
+# weekly and on every push — the same bar kasstacker.org holds everything to.
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8 * * 1'
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - run: git clone --depth 1 https://github.com/kaspanet/silverscript ../silverscript
+      - run: ./compile.sh
+      - run: test -s artifact.json && echo "artifact: $(wc -c < artifact.json) bytes"
