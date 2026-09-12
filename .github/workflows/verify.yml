@@ -17,4 +17,6 @@ jobs:
       - uses: actions/checkout@v4
       - run: git clone --depth 1 https://github.com/kaspanet/silverscript ../silverscript
       - run: ./compile.sh
-      - run: test -s artifact.json && echo "artifact: $(wc -c < artifact.json) bytes"
+      - run: |
+          test -s artifact.json
+          echo "artifact bytes: $(wc -c < artifact.json)"
