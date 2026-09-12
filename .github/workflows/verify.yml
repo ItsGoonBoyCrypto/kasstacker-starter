@@ -4,7 +4,8 @@ name: Verify compile
 # weekly and on every push — the same bar kasstacker.org holds everything to.
 on:
   push:
-  workflow_dispatch:
+    branches: [main]
+  workflow_dispatch: {}
   schedule:
     - cron: '0 8 * * 1'
 
