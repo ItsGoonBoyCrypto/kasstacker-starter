@@ -1,13 +1,13 @@
 name: Verify compile
 
 # Proves ./compile.sh works against current Silverscript in a fresh container,
-# weekly and on every push — the same bar kasstacker.org holds everything to.
+# daily and on every push — the same bar kasstacker.org holds everything to.
 on:
   push:
     branches: [main]
   workflow_dispatch: {}
   schedule:
-    - cron: '0 8 * * 1'
+    - cron: '0 8 * * *'
 
 jobs:
   compile:

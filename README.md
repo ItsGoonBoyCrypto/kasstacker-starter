@@ -25,7 +25,7 @@ one-line change.
 - **Change the rule** — the [Silverscript tutorial](https://github.com/kaspanet/silverscript/blob/master/docs/TUTORIAL.md)
   and the [KCC20 book](https://kaspanet.github.io/silverscript/kcc20-book/) take it from here.
 - **Prove it still compiles** — this repo's CI re-runs the compile against current
-  Silverscript weekly, the same way [kasstacker.org](https://kasstacker.org) verifies
+  Silverscript daily, the same way [kasstacker.org](https://kasstacker.org) verifies
   everything it publishes.
 
 ## Honesty note
